@@ -1,0 +1,18 @@
+{
+  "install": "echo 'install nothing'",
+  "start": "echo 'building...' && mvn -quiet compile exec:java",
+  "watch": {
+    "restart": {
+      "include": [
+        "\\.kt$",
+        "\\.java$"
+      ]
+    },
+    "install": {
+      "include": [
+        "^pom\\.xml$"
+      ]
+    },
+    "throttle": 1000
+  }
+}
