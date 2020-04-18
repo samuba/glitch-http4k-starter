@@ -12,8 +12,8 @@ import org.http4k.server.asServer
 fun main() {
 
     val app = routes(
-        "/ping" bind GET to { _ -> 
-            Response(OK).body("pong!") 
+        "/" bind GET to {
+            Response(OK).body("This is a http4k server running on kotlin v${KotlinVersion.CURRENT}")
         },
         "/greet/{name}" bind GET to { req ->
             val name = req.path("name")
